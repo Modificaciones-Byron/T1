@@ -158,10 +158,10 @@ const logosPath = {
 
 const positions = {
     logo: [
-        [690, 1110], [690, 1250], [690, 1390], [690, 1530],
-        [690, 1670], [690, 1810], [690, 1955], [690, 2095],
-        [690, 2235], [690, 2375], [690, 2515], [690, 2655],
-        [690, 2795], [690, 2935], [690, 3075],
+        [695, 1110], [695, 1250], [695, 1390], [695, 1530],
+        [695, 1670], [695, 1810], [695, 1955], [695, 2095],
+        [695, 2235], [695, 2375], [695, 2515], [695, 2655],
+        [695, 2795], [695, 2935], [695, 3075],
     ],
     equipo: [
         [1570, 1215], [1570, 1355], [1570, 1495], [1570, 1635],
@@ -342,13 +342,13 @@ function crearImagen() {
 
                 // Kills en negrita
                 ctx.fillStyle = "black"; // Kills en negro
-                ctx.font = "bold 95px Montserrat"; // Aplicar negrita
+                ctx.font = "bold 90px Montserrat"; // Aplicar negrita
                 ctx.textAlign = "center";
                 ctx.fillText(equipo.totalKills, positions.kills[index][0], positions.kills[index][1]);
 
                 // Top y Total en blanco (sin negrita si prefieres)
                 ctx.fillStyle = "white";
-                ctx.font = "bold 95px Montserrat"; // Aplicar negrita
+                ctx.font = "bold 90px Montserrat"; // Aplicar negrita
                 ctx.fillText(equipo.totalTop, positions.top[index][0], positions.top[index][1]);
                 ctx.fillText(equipo.totalPuntaje, positions.total[index][0], positions.total[index][1]);
 
@@ -372,12 +372,12 @@ function crearImagen() {
                 ctx.fillText(equipo.nombre, positions.equipo[index][0], positions.equipo[index][1]);
 
                 ctx.fillStyle = "black"; // Kills en negro
-                ctx.font = "bold 95px Montserrat"; // Aplicar negrita
+                ctx.font = "bold 90px Montserrat"; // Aplicar negrita
                 ctx.textAlign = "center";
                 ctx.fillText(equipo.totalKills, positions.kills[index][0], positions.kills[index][1]);
 
                 ctx.fillStyle = "white"; // Top y Total en blanco
-                ctx.font = "bold 95px Montserrat"; // Aplicar negrita
+                ctx.font = "bold 9opx Montserrat"; // Aplicar negrita
                 ctx.fillText(equipo.totalTop, positions.top[index][0], positions.top[index][1]);
                 ctx.fillText(equipo.totalPuntaje, positions.total[index][0], positions.total[index][1]);
 
