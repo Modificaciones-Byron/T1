@@ -154,8 +154,6 @@ const logosPath = {
     "FENIX": "logos/FENIX.png",
     "ALQAEDA": "logos/ALQ.png",
     "ISD": "logos/ISD.png",
-    
-    // Agrega más equipos y rutas de logos aquí
 };
 
 const positions = {
