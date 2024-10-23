@@ -23,7 +23,7 @@ document.addEventListener("deviceready", function() {
     }
 });
 const logosPath = {
-    "AS PC": "logos/AS.png",
+"AS PC": "logos/AS.png",
     "AS": "logos/AS.png",
     "ALYANZ GIRLS": "logos/ALYANZ.png",
     "ALYANZ UZK": "logos/ALYANZ.png",
