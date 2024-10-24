@@ -14,7 +14,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 370px;
+    width: 360px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: #2c2c2c; /* Fondo más oscuro */
@@ -40,15 +40,16 @@ body {
 }
 
 .contenedor .usuario input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  user-select: none;  /* Prevent text selection */
 }
 
 .contenedor .usuario label {
@@ -245,6 +246,11 @@ body {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #2c2c2c inset !important; /* Color de fondo */
+    -webkit-text-fill-color: #fff !important; /* Color del texto */
+    
 }
 
 .modal-contenido button:hover {
