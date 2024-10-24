@@ -60,6 +60,7 @@ const logosPath = {
     "DARK MYTH": "logos/DM.png",
     "DIENASTY": "logos/DNST.png",
     "DYNASTY": "logos/DYNASTY.png",
+    "DRAGON LEGIONS": "logos/DL.png", // FALTA LOGO
     "E11 ELEVEN EXY": "logos/EXY_TOP.png",
     "ELITE": "logos/KENIT.png",
     "ELITE KENIT": "logos/KENIT.png",
@@ -147,10 +148,14 @@ const logosPath = {
     "WZE TEAM": "logos/WZE.png",
     "ZELTA": "logos/ZELTA.png",
     "ZENIN": "logos/ZENIN.png",
+    "XS AURA": "logos/XS.png", // FALTA LOGO
+    "X-ESPORTS": "logos/DL.png", // FALTA LOGO
     "1SKT MOBILE": "logos/SKT.png",
     "21S": "logos/21S.png",
     "6XZ E-SPORTS": "logos/6XZ.png",
     "7Z GLIZZY": "logos/GLIZZY.png",
+    "8GAY": "logos/GAY.png", // FALTA LOGO
+
 };
 
 
