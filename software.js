@@ -149,7 +149,7 @@ const logosPath = {
     "ZELTA": "logos/ZELTA.png",
     "ZENIN": "logos/ZENIN.png",
     "XS AURA": "logos/XS.png", // FALTA LOGO
-    "X-ESPORTS": "logos/DL.png", // FALTA LOGO
+    "X-ESPORTS": "logos/X.png", // FALTA LOGO
     "1SKT MOBILE": "logos/SKT.png",
     "21S": "logos/21S.png",
     "6XZ E-SPORTS": "logos/6XZ.png",
