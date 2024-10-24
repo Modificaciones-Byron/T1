@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>CalTop Soft / Tabla / UZX</title>
+    <title>CalTop Soft / Tabla / T1</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesystems.css">
 </head>
+
 <body>
     <style>
         body {
@@ -117,10 +119,12 @@
             left: 0; /* Mostrar la barra lateral */
         }
     </style>
-    
-    <button id="toggleButton">=</button> <!-- Asegúrate de no incluir espacio antes del signo -->
+
+    <!-- Botón para mostrar la barra lateral -->
+    <button id="toggleButton">=</button>
     <br>
     <br>
+    <!-- Logo -->
     <img class="lg" src="logos/T1.png" alt="Logo">
     <div>
         <label for="numEquipos">Cantidad de equipos (1-15):</label>
@@ -132,31 +136,84 @@
     <br>
     <button id="resultadosButton" disabled>Generar Resultados</button>
     <br>
-    <button id="imagenButton" disabled>Descargar Imagen</button>    
-
+    <button id="imagenButton" disabled>Descargar Imagen</button>
+    <br>
 
     <div class="container"></div>
 
+    <!-- Barra lateral -->
     <div id="sidebar" class="sidebar">
         <button class="closeButton" id="closeButton">&times;</button>
         <h3 class="listname">Lista de Nombres</h3>
         <div id="nameList"></div>
     </div>
 
+    <script src="software.js"></script>
     <script>
-    document.getElementById('toggleButton').addEventListener('click', function() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('open');
-        this.classList.add('hidden'); // Ocultar el botón cuando la barra esté abierta
-    });
+        // Verificar si el usuario está autenticado y si la versión es la correcta
+        window.onload = function() {
+            const isAuthenticated = localStorage.getItem('auth');
+            const versionLocal = localStorage.getItem('version');
 
-    document.getElementById('closeButton').addEventListener('click', function() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('open');
-        document.getElementById('toggleButton').classList.remove('hidden'); // Mostrar el botón cuando se cierre la barra
-    });
+            // Simulando la versión actual del servidor
+            const versionActual = '3.0'; // Esta versión debe actualizarse cuando cambies usuario/contraseña en el servidor
 
-    document.addEventListener('click', function(event) {
+            if (isAuthenticated !== 'true' || versionLocal !== versionActual) {
+                // Si no está autenticado o la versión es diferente, redirigir al inicio de sesión
+                localStorage.removeItem('auth'); // Limpiar el estado de autenticación
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Lógica para generar dinámicamente los nombres desde logosPath
+            const nameList = document.getElementById('nameList');
+            for (const equipo in logosPath) {
+                if (logosPath.hasOwnProperty(equipo)) {
+                    // Crear un contenedor para cada equipo
+                    const nameItem = document.createElement('div');
+                    nameItem.classList.add('name-item');
+                    
+                    // Crear el botón de copiar
+                    const copyButton = document.createElement('button');
+                    copyButton.classList.add('copyButton');
+                    copyButton.textContent = 'Copiar';
+                    copyButton.dataset.name = equipo;
+
+                    // Añadir el evento para copiar al portapapeles
+                    copyButton.addEventListener('click', function() {
+                        const name = this.dataset.name;
+                        navigator.clipboard.writeText(name).then(() => {
+                            alert(`${name} copiado al portapapeles!`);
+                        });
+                    });
+
+                    // Añadir el nombre del equipo y el botón a la lista
+                    nameItem.textContent = equipo;
+                    nameItem.appendChild(copyButton);
+                    nameList.appendChild(nameItem);
+                }
+            }
+
+        // Lógica para la barra lateral
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+            
+            // Ocultar el botón "=" cuando la barra esté abierta
+            if (sidebar.classList.contains('open')) {
+                this.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('closeButton').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('open');
+            
+            // Mostrar el botón "=" cuando la barra se cierre
+            document.getElementById('toggleButton').classList.remove('hidden');
+        });
+        
+        document.addEventListener('click', function(event) {
         const sidebar = document.getElementById('sidebar');
         const toggleButton = document.getElementById('toggleButton');
 
@@ -167,38 +224,8 @@
         }
     });
 
-    // Generar dinámicamente los nombres desde logosPath
-    window.onload = function() {
-        const nameList = document.getElementById('nameList');
-        for (const equipo in logosPath) {
-            if (logosPath.hasOwnProperty(equipo)) {
-                // Crear un contenedor para cada equipo
-                const nameItem = document.createElement('div');
-                nameItem.classList.add('name-item');
-                
-                // Crear el botón de copiar
-                const copyButton = document.createElement('button');
-                copyButton.classList.add('copyButton');
-                copyButton.textContent = 'Copiar';
-                copyButton.dataset.name = equipo;
-
-                // Añadir el evento para copiar al portapapeles
-                copyButton.addEventListener('click', function() {
-                    const name = this.dataset.name;
-                    navigator.clipboard.writeText(name).then(() => {
-                        alert(`${name} copiado al portapapeles!`);
-                    });
-                });
-
-                // Añadir el nombre del equipo y el botón a la lista
-                nameItem.textContent = equipo;
-                nameItem.appendChild(copyButton);
-                nameList.appendChild(nameItem);
-            }
-        }
-    };
+};
     </script>
-
-    <script src="software.js"></script>
 </body>
+
 </html>
