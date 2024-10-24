@@ -52,10 +52,12 @@
             // Usuario y contraseña predeterminados
             const usuarioCorrecto = 'resultadostabla@gmail.com';
             const contrasenaCorrecta = 'GOTIERONE';
+            const versionActual = '3.0'; // Cambia esta versión cuando cambies la contraseña
 
             if (correo === usuarioCorrecto && contrasena === contrasenaCorrecta) {
-                // Almacenar en el localStorage que el usuario ha iniciado sesión
+                // Almacenar en el localStorage que el usuario ha iniciado sesión y guardar la versión actual
                 localStorage.setItem('auth', 'true');
+                localStorage.setItem('version', versionActual);
                 window.location.href = 'system.html'; // Redirigir a la página del sistema
             } else {
                 mostrarError(); // Mostrar la ventana modal de error
