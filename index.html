@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Iniciar Datos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,7 +29,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                iniciar
+                Iniciar
             </a>
         </form>
     </div>
@@ -54,6 +54,8 @@
             const contrasenaCorrecta = 'GOTIERONE';
 
             if (correo === usuarioCorrecto && contrasena === contrasenaCorrecta) {
+                // Almacenar en el localStorage que el usuario ha iniciado sesión
+                localStorage.setItem('auth', 'true');
                 window.location.href = 'system.html'; // Redirigir a la página del sistema
             } else {
                 mostrarError(); // Mostrar la ventana modal de error
