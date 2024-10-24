@@ -95,6 +95,7 @@ const logosPath = {
     "IGZ PC": "logos/IGZ.png",
     "IGZ SNIPER": "logos/IGZ.png",
     "INTERPOL": "logos/ITP.png",
+    "INT ELITE": "logos/INT.png",
     "ISD": "logos/ISD.png",
     "KENIT SPORTS": "logos/KENIT.png",
     "KIDS GANG": "logos/KGANG.png",
