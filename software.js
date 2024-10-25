@@ -122,6 +122,7 @@ const logosPath = {
     "PKB F1": "logos/PKB.png",
     "PXS SPORTS": "logos/PXS.png",
     "R3": "logos/R3.png",
+    "REHABILITED": "logos/RHB.png",
     "R6": "logos/RKN.png",
     "RAPTORS T": "logos/RT.png",
     "RAPTORS TEAM": "logos/RT.png",
