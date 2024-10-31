@@ -68,6 +68,7 @@ const logosPath = {
     "DYNASTY": "logos/DYNASTY.png",
     "DRAGON LEGIONS": "logos/DL.png", // FALTA LOGO
     "E11 ELEVEN EXY": "logos/EXY_TOP.png",
+    "E11 EXY": "logos/EXY_TOP.png",
     "ELITE": "logos/KENIT.png",
     "ELITE KENIT": "logos/KENIT.png",
     "KENIT": "logos/KENIT.png",
