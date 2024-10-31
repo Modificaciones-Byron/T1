@@ -74,6 +74,7 @@ const logosPath = {
     "ELITE KENIT": "logos/KENIT.png",
     "KENIT": "logos/KENIT.png",
     "KNG": "logos/KNG.png",
+    "KNIGHTS ONFIRE": "logos/KNG.png",
     "EX WNG": "logos/EXWNG.png",
     "EXY BIN PEN": "logos/EXY_SA.png",
     "EXY CREW": "logos/EXY_CREW.png",
