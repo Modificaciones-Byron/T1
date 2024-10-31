@@ -23,6 +23,7 @@ document.addEventListener("deviceready", function() {
     }
 });
 const logosPath = {
+    "ARES": "logos/ARES.png",
     "AGS EU": "logos/AGS.png",
     "AGSV2 ESPORTS": "logos/AGS.png",
     "ALQAEDA": "logos/ALQ.png",
@@ -72,6 +73,7 @@ const logosPath = {
     "ELITE": "logos/KENIT.png",
     "ELITE KENIT": "logos/KENIT.png",
     "KENIT": "logos/KENIT.png",
+    "KNG": "logos/KNG.png",
     "EX WNG": "logos/EXWNG.png",
     "EXY BIN PEN": "logos/EXY_SA.png",
     "EXY CREW": "logos/EXY_CREW.png",
@@ -151,6 +153,7 @@ const logosPath = {
     "SINEIRA": "logos/SN.png",
     "SILENCE": "logos/SCE.png",
     "SUPERBBCHITOS": "logos/SB.png",
+    "TROPA DO CONFLITO": "logos/TCL.png",
     "T1": "logos/T1.png",
     "T1 PC": "logos/T1.png",
     "TEAM 21": "logos/TEAM21.png",
