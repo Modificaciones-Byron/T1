@@ -374,14 +374,12 @@ function crearImagen() {
 
                 logosCargados++;
                 if (logosCargados === equipos.length) {
-                    setTimeout(() => {
-                        const imgURL = canvas.toDataURL("image/png");
-                        const link = document.createElement("a");
-                        link.href = imgURL;
-                        link.download = "Tabla_Resultados.png";
-                        link.click();
-                        ocultarSpinner(); // Ocultar el spinner al finalizar
-                    },0);
+                    const imgURL = canvas.toDataURL("image/png");
+                    const link = document.createElement("a");
+                    link.href = imgURL;
+                    link.download = "Tabla_Resultados.png";
+                    link.click();
+                    ocultarSpinner(); // Ocultar el spinner al finalizar
                 }
             };
 
@@ -404,14 +402,12 @@ function crearImagen() {
 
                 logosCargados++;
                 if (logosCargados === equipos.length) {
-                    setTimeout(() => {
-                        const imgURL = canvas.toDataURL("image/png");
-                        const link = document.createElement("a");
-                        link.href = imgURL;
-                        link.download = "Tabla_Resultados.png";
-                        link.click();
-                        ocultarSpinner(); // Ocultar el spinner al finalizar
-                    },0);
+                    const imgURL = canvas.toDataURL("image/png");
+                    const link = document.createElement("a");
+                    link.href = imgURL;
+                    link.download = "Tabla_Resultados.png";
+                    link.click();
+                    ocultarSpinner(); // Ocultar el spinner al finalizar
                 }
             };
         });
