@@ -381,7 +381,7 @@ function crearImagen() {
                         link.download = "Tabla_Resultados.png";
                         link.click();
                         ocultarSpinner(); // Ocultar el spinner al finalizar
-                    },);
+                    },0);
                 }
             };
 
@@ -411,7 +411,7 @@ function crearImagen() {
                         link.download = "Tabla_Resultados.png";
                         link.click();
                         ocultarSpinner(); // Ocultar el spinner al finalizar
-                    },);
+                    },0);
                 }
             };
         });
