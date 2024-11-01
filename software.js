@@ -1,27 +1,11 @@
-// Solicitar permisos de almacenamiento en Android al iniciar la app
-document.addEventListener("deviceready", function() {
-    if (cordova.plugins && cordova.plugins.permissions) {
-        var permissions = cordova.plugins.permissions;
-        permissions.checkPermission(permissions.WRITE_EXTERNAL_STORAGE, function(status) {
-            if (!status.hasPermission) {
-                // Solicitar permiso si no está concedido
-                permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, function(status) {
-                    if (status.hasPermission) {
-                        console.log("Permiso de almacenamiento concedido");
-                    } else {
-                        console.log("Permiso de almacenamiento denegado");
-                    }
-                }, function() {
-                    console.log("Error al solicitar permiso");
-                });
-            }
-        }, function() {
-            console.log("Error al verificar permiso");
-        });
-    } else {
-        console.log("El plugin de permisos de Cordova no está disponible");
-    }
-});
+// Funciones para mostrar y ocultar el spinner
+function mostrarSpinner() {
+    document.getElementById("spinner").style.display = "flex";
+}
+
+function ocultarSpinner() {
+    document.getElementById("spinner").style.display = "none";
+}
 const logosPath = {
     "ARES": "logos/ARES.png",
     "AGS EU": "logos/AGS.png",
@@ -325,6 +309,7 @@ function iniciar() {
 
 
 function generarResultados() {
+    mostrarSpinner(); // Mostrar el spinner al inicio
     equipos.length = 0;  // Reiniciar el array de equipos
     const inputs = document.querySelectorAll(".equipo");
     inputs.forEach(input => {
@@ -345,9 +330,11 @@ function generarResultados() {
     const resultsText = equipos.map(e => `${e.nombre},${e.totalKills},${e.totalTop},${e.totalPuntaje}`).join("\n");
     localStorage.setItem('resultados', resultsText);
     document.getElementById("imagenButton").disabled = false;
+    ocultarSpinner(); // Ocultar el spinner al finalizar
 }
 
 function crearImagen() {
+    mostrarSpinner(); // Mostrar el spinner al inicio
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     const img = new Image();
@@ -393,7 +380,8 @@ function crearImagen() {
                         link.href = imgURL;
                         link.download = "Tabla_Resultados.png";
                         link.click();
-                    }, 1000);
+                        ocultarSpinner(); // Ocultar el spinner al finalizar
+                    },);
                 }
             };
 
@@ -422,7 +410,8 @@ function crearImagen() {
                         link.href = imgURL;
                         link.download = "Tabla_Resultados.png";
                         link.click();
-                    }, 1000);
+                        ocultarSpinner(); // Ocultar el spinner al finalizar
+                    },);
                 }
             };
         });
